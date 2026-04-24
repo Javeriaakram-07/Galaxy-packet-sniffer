@@ -193,7 +193,6 @@ def capture_loop():
               stop_filter=lambda x: not capturing)
     except Exception as e:
         print(f"[ERROR] Capture failed: {e}")
-        global capturing
         capturing = False
 
 # ==================== Flask API ====================
@@ -276,16 +275,16 @@ def get_devices():
         except Exception as e:
             print(f"[ERROR] Getting devices: {e}")
     
-    # Add placeholders for missing types (EXCEPT Cellular)
+    # Add placeholders for missing types — name='' means not available on this machine
     if not found_vpn:
-        devices.append({'name': 'VPN', 'desc': ' VPN'})
+        devices.append({'name': '', 'desc': ' VPN (not detected)'})
     if not found_wifi:
-        devices.append({'name': 'Wi-Fi', 'desc': ' Wi-Fi'})
+        devices.append({'name': '', 'desc': ' Wi-Fi (not detected)'})
     if not found_ethernet:
-        devices.append({'name': 'Ethernet', 'desc': ' Ethernet'})
+        devices.append({'name': '', 'desc': ' Ethernet (not detected)'})
     if not found_bluetooth:
-        devices.append({'name': 'Bluetooth', 'desc': ' Bluetooth'})
-    # Cellular placeholder REMOVED - only shows when real device exists
+        devices.append({'name': '', 'desc': ' Bluetooth (not detected)'})
+    # Cellular only shows when real device exists
     
     return jsonify(devices[:5])
 
@@ -335,8 +334,8 @@ def start_capture():
     if not device:
         device = request.json.get('dev', '') if request.is_json else ''
     
-    if not device:
-        return jsonify({'ok': False, 'msg': 'No device specified'})
+    if not device or device in ('Wi-Fi', 'Ethernet', 'Bluetooth', 'VPN', 'Cellular'):
+        return jsonify({'ok': False, 'msg': 'This interface is not available on your machine. Select a detected one.'})
     
     current_device = device
     capturing = True
