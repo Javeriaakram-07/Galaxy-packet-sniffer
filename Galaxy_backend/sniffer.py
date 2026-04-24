@@ -334,8 +334,7 @@ def start_capture():
     if not device:
         device = request.json.get('dev', '') if request.is_json else ''
     
-    if not device or device in ('Wi-Fi', 'Ethernet', 'Bluetooth', 'VPN', 'Cellular'):
-        return jsonify({'ok': False, 'msg': 'This interface is not available on your machine. Select a detected one.'})
+   
     
     current_device = device
     capturing = True
