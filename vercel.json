@@ -1,0 +1,12 @@
+{
+  "name": "galaxy-monitor-frontend",
+  "version": 2,
+  "buildCommand": "",
+  "outputDirectory": "Galaxy_frontend",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
