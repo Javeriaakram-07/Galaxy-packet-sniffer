@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Galaxy Monitor — Network Traffic Analysis</title>
+    <title>Galaxy Sniffer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -38,20 +38,19 @@
         --card-hover: #111e2e;
         --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
       }
-
-      [data-theme="light"] {
-        --bg: #eef3f9;
-        --bg2: #ffffff;
-        --bg3: #e4ecf5;
-        --border: #c5d5e8;
-        --border2: #adc0d8;
-        --text: #0d1e30;
-        --text-2: #3a5670;
-        --text-3: #7090aa;
-        --card-bg: #ffffff;
-        --card-hover: #f0f7ff;
-        --shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
-      }
+[data-theme="light"] {
+  --bg: #eef2f5;
+  --bg2: #ffffff;
+  --bg3: #e8edf2;
+  --border: #d5dee5;
+  --border2: #c2cdd6;
+  --text: #1e2f3a;
+  --text-2: #4a6270;
+  --text-3: #7890a0;
+  --card-bg: #ffffff;
+  --card-hover: #f2f6f9;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
 
       *,
       *::before,
@@ -850,14 +849,11 @@
       <header class="header">
         <div class="brand">
           <div class="brand-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#60a5fa"
-              stroke-width="1.7"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
+  <svg viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+    <path d="M2 17l10 5 10-5" />
+    <path d="M2 12l10 5 10-5" />
+  </svg>
               <circle cx="12" cy="12" r="3" />
               <circle cx="12" cy="12" r="8" stroke-dasharray="3 2" />
               <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
@@ -867,7 +863,7 @@
             </svg>
           </div>
           <div>
-            <div class="brand-name">Galaxy<span>Monitor</span></div>
+            <div class="brand-name">Galaxy<span>Sniffer</span></div>
             <div class="brand-sub">Network Traffic Analysis Platform</div>
           </div>
         </div>
@@ -891,9 +887,9 @@
       <div class="offline-banner" id="offline-banner">
         <span style="font-size: 1.1rem; flex-shrink: 0">⚠️</span>
         <div>
-          <strong>Backend offline.</strong> Run <code>sniffer.exe</code> as
-          Administrator and refresh — or use <strong>Demo Data</strong> below to
-          preview the interface without the backend.
+          <strong>Backend offline.</strong> Run it on<code>Render </code> and
+          refresh — or use <strong>Demo Data</strong> below to preview the
+          interface without the backend.
         </div>
       </div>
 
@@ -1064,7 +1060,7 @@
     <div id="toast"></div>
 
     <script>
-      const API = "http://localhost:8765";
+      const API = "https://galaxy-packet-sniffer.onrender.com";
       const POLL_MS = 800;
 
       let allPackets = [],
