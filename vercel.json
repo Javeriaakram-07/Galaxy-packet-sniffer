@@ -1,8 +1,8 @@
 {
-  "name": "galaxy-monitor-frontend",
+  "name": "cloudysniffer-frontend",
   "version": 2,
   "buildCommand": "",
-  "outputDirectory": "Galaxy_frontend",
+  "outputDirectory": "sniffer_frontend",
   "rewrites": [
     {
       "source": "/(.*)",
