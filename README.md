@@ -1,4 +1,4 @@
-# 🌌 Galaxy Monitor - Network Traffic Analysis Platform
+# 🌌 CloudySniffer - Network Traffic Analysis Platform
 
 A professional network traffic monitoring tool with a modern web interface. Capture and analyze network packets in real-time, identify services, and monitor network activity.
 
@@ -12,19 +12,20 @@ A professional network traffic monitoring tool with a modern web interface. Capt
 - 📱 **Multiple interface support** (Wi-Fi, Ethernet, Bluetooth, Cellular, VPN)
 
 ## 🏗️ Architecture
+
 Frontend (Vercel) ←→ Backend (Local)
-https://galaxy-packet-sniffer.vercel.app ←→ http://localhost:8765
+https://galaxy-packet-sniffer.vercel.app/ ←→ http://localhost:8765
 
 text
 
 ## 📋 Prerequisites
 
-| Requirement | Version | Command |
-|-------------|---------|---------|
-| Windows OS | 10/11 | `winver` |
-| Python | 3.8+ | `python --version` |
-| Npcap | 1.60+ | Install from npcap.com |
-| Git | Latest | `git --version` |
+| Requirement | Version | Command                |
+| ----------- | ------- | ---------------------- |
+| Windows OS  | 10/11   | `winver`               |
+| Python      | 3.8+    | `python --version`     |
+| Npcap       | 1.60+   | Install from npcap.com |
+| Git         | Latest  | `git --version`        |
 
 ## 🚀 Quick Start
 
@@ -40,23 +41,23 @@ text
 ### Step 2: Clone Repository
 
 ```bash
-git clone https://github.com/Javeriaakram-07/Galaxy-packet-sniffer.git
-cd Galaxy-packet-sniffer
+git clone https://github.com/Javeriaakram-07/Cloudysniffer.git
+cd CloudySniffer
 Step 3: Install Python Dependencies
 bash
-cd Galaxy_backend
+cd Sniffer_backend
 pip install flask flask-cors scapy
 Step 4: Run Backend (as Administrator)
 Open Terminal as Administrator (Right-click → Run as Administrator):
 
 bash
-cd "C:\Users\User\CS\4th sem\CN Project\Galaxy_backend"
+cd "C:\Users\User\CS\4th sem\CN Project\CloudySniffer_backend"
 python sniffer.py
 Expected output:
 
 text
 ==================================================
-  NetMon Backend - Complete Edition
+  CloudySniffer Backend - Complete Edition
 ==================================================
   Server: http://localhost:8765
 ==================================================
@@ -65,7 +66,7 @@ Step 5: Access Frontend
 Open browser and go to:
 
 text
-https://galaxy-packet-sniffer.vercel.app
+https://galaxy-packet-sniffer.vercel.app/
 🔧 Backend API Endpoints
 Endpoint	Method	Description
 /api/devices	GET	List network interfaces
@@ -92,7 +93,7 @@ bash
 curl http://localhost:8765/api/devices
 
 # Start backend as Administrator
-cd Galaxy_backend
+cd Sniffer_backend
 python sniffer.py
 "Interface not found"
 Run backend as Administrator
@@ -124,7 +125,7 @@ Restart computer after Npcap installation
 🔄 Quick Commands
 bash
 # Start Python Backend (as Administrator)
-cd Galaxy_backend && python sniffer.py
+cd Sniffer_backend && python sniffer.py
 
 # Install Dependencies
 pip install flask flask-cors scapy
@@ -136,22 +137,23 @@ curl http://localhost:8765/api/devices
 g++ sniffer.cpp -o sniffer.exe -I"C:\Users\User\Downloads\npcap-sdk-1.16\Include" -L"C:\Users\User\Downloads\npcap-sdk-1.16\Lib\x64" -lwpcap -lPacket -lws2_32 -std=c++17 -O2
 📁 Project Structure
 text
-Galaxy-packet-sniffer/
-├── Galaxy_backend/
+CloudySniffer-packet-sniffer/
+├── Sniffer_backend/
 │   ├── sniffer.py          # Python backend
 │   ├── sniffer.cpp         # C++ backend
 │   └── requirements.txt    # Dependencies
-├── Galaxy_frontend/
+├── Sniffer_frontend/
 │   └── index.html          # Web interface
 └── vercel.json             # Vercel config
 📞 Links
-Frontend: https://galaxy-packet-sniffer.vercel.app
+Frontend: https://galaxy-packet-sniffer.vercel.app/
 
 Backend (local): http://localhost:8765
 
-GitHub: https://github.com/Javeriaakram-07/Galaxy-packet-sniffer
+GitHub: https://github.com/Javeriaakram-07/Cloudysniffer
 
 👨‍💻 Author
 Javeria Akram
 
 ⭐ Star this repository if you find it useful!
+```
